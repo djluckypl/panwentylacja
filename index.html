@@ -1,12 +1,3 @@
-Przyczyną są najprawdopodobniej **zbyt ciemne filtry nałożone na zdjęcie**.
-
-W poprzedniej wersji CSS gradient miał aż 88% krycia ciemnego granatu, a w HTML znajdował się dodatkowy zaciemniający `div`. W efekcie zdjęcie ładowało się w tle, ale było przykryte niemal całkowicie czarną, nieprzezroczystą warstwą.
-
-Druga sprawa to ścieżka. Dodałem przedrostek `./` (`url('./backgr.jpg')`), co wymusza na przeglądarce szukanie pliku w tym samym folderze, w którym jest plik HTML. Pamiętaj też, że wielkość liter ma znaczenie (np. przy hostingu na Vercel `backgr.jpg` to nie to samo co `backgr.JPG`).
-
-Oto naprawiony kod – rozjaśniłem filtry i usunąłem podwójną nakładkę, aby zdjęcie pięknie przebijało się przez tło:
-
-```html
 <!DOCTYPE html>
 <html lang="pl" class="scroll-smooth">
 <head>
