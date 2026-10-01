@@ -39,7 +39,6 @@
 </head>
 <body class="font-sans text-slate-800 bg-brand-light antialiased selection:bg-brand-secondary selection:text-white">
 
-    <!-- Navbar z Twoimi ustawieniami logo -->
     <nav class="fixed w-full z-50 glass-effect border-b border-slate-200 shadow-sm transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-30">
@@ -71,24 +70,63 @@
         </div>
     </nav>
 
-    <header class="hero-bg relative min-h-screen flex items-center justify-center text-center pt-48">
+    <header class="hero-bg relative min-h-screen flex items-center pt-32 pb-16">
         <div class="absolute inset-0 bg-brand-dark opacity-45"></div>
-        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-            <span class="inline-block py-1 px-3 rounded-full bg-brand-secondary/20 border border-brand-secondary/30 text-blue-200 text-sm font-semibold tracking-wider mb-6 uppercase backdrop-blur-sm">Rekuperacja dla domów jednorodzinnych</span>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                Instalacje dopracowane z dbałością o każdy detal.<br>
-                <span class="text-blue-300">Świeże powietrze i realne oszczędności na ogrzewaniu.</span>
-            </h1>
-            <p class="text-lg sm:text-xl text-slate-200 mb-10 max-w-2xl mx-auto font-light">
-                Projektujemy i montujemy nowoczesne systemy rekuperacji. Pracujemy rzetelnie, na jasnych warunkach i sprawdzonych materiałach.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#kalkulator" class="bg-brand-secondary hover:bg-blue-400 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transform hover:-translate-y-1">
-                    Sprawdź szacunkowy koszt
-                </a>
-                <a href="#oferta" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-lg font-semibold text-lg transition-all backdrop-blur-sm">
-                    Dlaczego warto z nami
-                </a>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Lewa strona: Tekst -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <span class="inline-block py-1 px-3 rounded-full bg-brand-secondary/20 border border-brand-secondary/30 text-blue-200 text-sm font-semibold tracking-wider mb-6 uppercase backdrop-blur-sm">Rekuperacja dla domów jednorodzinnych</span>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                        Instalacje dopracowane z dbałością o każdy detal.<br>
+                        <span class="text-blue-300">Świeże powietrze i realne oszczędności na ogrzewaniu.</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-200 mb-10 max-w-2xl font-light mx-auto lg:mx-0">
+                        Projektujemy i montujemy nowoczesne systemy rekuperacji. Pracujemy rzetelnie, na jasnych warunkach i sprawdzonych materiałach.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#kalkulator" class="bg-brand-secondary hover:bg-blue-400 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transform hover:-translate-y-1">
+                            Sprawdź szacunkowy koszt
+                        </a>
+                        <a href="#oferta" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-lg font-semibold text-lg transition-all backdrop-blur-sm">
+                            Dlaczego warto z nami
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Prawa strona: Grafika ilustracyjna rekuperacji -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 shadow-2xl text-white relative">
+                        <div class="absolute -top-3 -right-3 bg-brand-secondary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">System z odzyskiem ciepła</div>
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <svg class="w-6 h-6 mr-2 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                            Jak działa rekuperacja?
+                        </h3>
+                        <div class="space-y-4 text-sm text-slate-200">
+                            <div class="flex items-start bg-slate-900/40 p-3 rounded-xl border border-white/10">
+                                <span class="bg-blue-500 text-white font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mr-3 text-xs">1</span>
+                                <div>
+                                    <strong class="text-white block">Świeże powietrze z zewnątrz</strong>
+                                    Zasysane z zewnątrz, oczyszczane z pyłków i smogu przez zaawansowane filtry.
+                                </div>
+                            </div>
+                            <div class="flex items-start bg-slate-900/40 p-3 rounded-xl border border-white/10">
+                                <span class="bg-blue-500 text-white font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mr-3 text-xs">2</span>
+                                <div>
+                                    <strong class="text-white block">Odzysk ciepła w centrali</strong>
+                                    Strumień wywiewany oddaje ciepło nawiewanemu bez mieszania się zapachów.
+                                </div>
+                            </div>
+                            <div class="flex items-start bg-slate-900/40 p-3 rounded-xl border border-white/10">
+                                <span class="bg-blue-500 text-white font-bold w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mr-3 text-xs">3</span>
+                                <div>
+                                    <strong class="text-white block">Komfort w całym domu</strong>
+                                    Czyste, przefiltrowane powietrze o idealnej temperaturze trafia do sypialni i salonu.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -237,7 +275,6 @@
         </div>
     </section>
 
-    <!-- Stopka w jasnej tonacji dla doskonałej czytelności logo -->
     <footer id="kontakt" class="bg-white pt-16 pb-8 border-t border-slate-200 text-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
