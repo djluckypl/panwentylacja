@@ -238,8 +238,15 @@
                                     </div>
                                     <div>
                                         <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Adres e-mail</label>
-                                        <input type="email" id="email" name="email" placeholder="jan@example.com" required class="block w-full rounded-xl border-slate-300 bg-slate-50 border py-3 px-4 text-slate-900 focus:border-brand-secondary focus:ring-brand-secondary focus:bg-white transition-colors outline-none">
+                                        <!-- type="email" oraz pattern wymuszają poprawny format maila -->
+                                        <input type="email" id="email" name="email" placeholder="jan@example.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Wpisz poprawny adres e-mail (np. nazwa@domena.pl)" class="block w-full rounded-xl border-slate-300 bg-slate-50 border py-3 px-4 text-slate-900 focus:border-brand-secondary focus:ring-brand-secondary focus:bg-white transition-colors outline-none">
                                     </div>
+                                </div>
+                                
+                                <!-- Nowe pole: Treść zapytania / uwagi (opcjonalnie) -->
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Treść zapytania / dodatkowe uwagi <span class="text-slate-400 font-normal">(opcjonalnie)</span></label>
+                                    <textarea id="message" name="message" rows="3" placeholder="Napisz, jeśli masz dodatkowe pytania lub szczegóły dotyczące budynku..." class="block w-full rounded-xl border-slate-300 bg-slate-50 border py-3 px-4 text-slate-900 focus:border-brand-secondary focus:ring-brand-secondary focus:bg-white transition-colors outline-none resize-none"></textarea>
                                 </div>
                             </div>
                             
