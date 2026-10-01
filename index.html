@@ -189,7 +189,12 @@
                     </div>
                     
                     <div class="lg:col-span-3 p-10">
-                        <form id="calcForm" class="space-y-8" onsubmit="event.preventDefault(); alert('Dziękujemy! Formularz został wysłany. Skontaktujemy się wkrótce.');">
+                        <form action="https://api.web3forms.com/submit" method="POST" id="calcForm" class="space-y-8">
+                            <!-- Klucz dostępu Web3Forms -->
+                            <input type="hidden" name="access_key" value="4b7e384b-0d6c-423c-8c9b-706338666a14">
+                            <!-- Temat wiadomości w Twojej skrzynce -->
+                            <input type="hidden" name="subject" value="Nowe zapytanie z kalkulatora Pan Wentylacja!">
+
                             <div class="space-y-6">
                                 <h4 class="text-lg font-semibold text-brand-dark border-b border-slate-200 pb-2">1. Parametry instalacji</h4>
                                 <div>
