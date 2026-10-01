@@ -31,7 +31,6 @@
             backdrop-filter: blur(10px);
         }
         .hero-bg {
-            /* Zmniejszyłem krycie gradientu (0.6 i 0.5 zamiast 0.88), żeby zdjęcie było dobrze widoczne */
             background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(30, 58, 138, 0.5)), url('./backgr3.jpg');
             background-size: cover;
             background-position: center;
@@ -49,9 +48,8 @@
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#oferta" class="text-slate-600 hover:text-brand-secondary font-medium transition-colors">Dlaczego my</a>
-                    <a href="#kalkulator" class="text-slate-600 hover:text-brand-secondary font-medium transition-colors">Wycena</a>
                     <a href="#kontakt" class="text-slate-600 hover:text-brand-secondary font-medium transition-colors">Kontakt</a>
-                    <a href="#kalkulator" class="bg-brand-primary hover:bg-brand-secondary text-white px-5 py-2.5 rounded-lg font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Kalkulator on-line</a>
+                    <a href="#kalkulator" class="bg-brand-primary hover:bg-brand-secondary text-white px-5 py-2.5 rounded-lg font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Kalkulator</a>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-primary focus:outline-none">
@@ -64,12 +62,11 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-lg pb-4">
             <a href="#oferta" class="block px-4 py-3 text-slate-600 hover:bg-slate-50 hover:text-brand-primary">Dlaczego my</a>
-            <a href="#kalkulator" class="block px-4 py-3 text-slate-600 hover:bg-slate-50 hover:text-brand-primary">Wycena</a>
+            <a href="#kalkulator" class="block px-4 py-3 text-slate-600 hover:bg-slate-50 hover:text-brand-primary">Kalkulator</a>
             <a href="#kontakt" class="block px-4 py-3 text-slate-600 hover:bg-slate-50 hover:text-brand-primary">Kontakt</a>
         </div>
     </nav>
 
-    <!-- Zaktualizowana sekcja Hero - usunięto stąd div zaciemniający -->
     <header class="hero-bg relative min-h-screen flex items-center pt-32 pb-16">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -384,5 +381,3 @@
     </script>
 </body>
 </html>
-
-```
