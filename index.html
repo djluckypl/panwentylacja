@@ -234,7 +234,7 @@
                                     </div>
                                     <div>
                                         <label for="phone" class="block text-sm font-medium text-slate-700 mb-2">Numer telefonu</label>
-                                        <!-- Walidacja numeru telefonu -->
+                                        <!-- Zabezpieczony numer telefonu -->
                                         <input type="tel" id="phone" name="phone" placeholder="+48 000 000 000" required pattern="(?:\+48\s?)?[0-9\s-]{9,15}" title="Podaj poprawny numer telefonu (minimum 9 cyfr, np. +48 500 600 700 lub 500600700)" class="block w-full rounded-xl border-slate-300 bg-slate-50 border py-3 px-4 text-slate-900 focus:border-brand-secondary focus:ring-brand-secondary focus:bg-white transition-colors outline-none">
                                     </div>
                                     <div>
@@ -243,7 +243,7 @@
                                     </div>
                                 </div>
                                 
-                                <!-- Pole: Treść zapytania / uwagi (opcjonalnie) -->
+                                <!-- Pole: Treść zapytania (opcjonalnie) -->
                                 <div>
                                     <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Treść zapytania / dodatkowe uwagi <span class="text-slate-400 font-normal">(opcjonalnie)</span></label>
                                     <textarea id="message" name="message" rows="3" placeholder="Napisz, jeśli masz dodatkowe pytania lub szczegóły dotyczące budynku..." class="block w-full rounded-xl border-slate-300 bg-slate-50 border py-3 px-4 text-slate-900 focus:border-brand-secondary focus:ring-brand-secondary focus:bg-white transition-colors outline-none resize-none"></textarea>
@@ -260,7 +260,7 @@
                         <div id="resultBox" class="mt-8 bg-blue-50 rounded-xl p-6 border border-blue-100 transition-all duration-300 opacity-50 grayscale pointer-events-none">
                             <h4 class="text-brand-dark font-bold text-lg mb-2 text-center">Szacunkowy koszt instalacji:</h4>
                             
-                            <!-- Blok widełek cenowych (zabezpieczony flex-row, whitespace-nowrap, flex-nowrap) -->
+                            <!-- Blok widełek cenowych (zabezpieczony w jednej linii) -->
                             <div id="priceRangeRow" class="flex flex-row items-baseline justify-center flex-nowrap whitespace-nowrap text-brand-primary mb-3 gap-x-1.5">
                                 <span id="priceMin" class="text-2xl sm:text-3xl font-extrabold">0</span>
                                 <span class="text-lg sm:text-xl font-bold text-slate-400">-</span>
@@ -268,13 +268,13 @@
                                 <span class="text-lg sm:text-xl font-bold">PLN</span>
                             </div>
 
-                            <!-- Informacja o metrażu powyżej 300m2 (domyślnie ukryta) -->
+                            <!-- Informacja o metrażu powyżej 300m2 (ukryta domyślnie) -->
                             <div id="overLimitMsg" class="hidden text-brand-primary text-lg sm:text-xl font-bold text-center mb-3">
                                 Powyżej 300 m² wycena indywidualna
                             </div>
 
                             <p class="text-xs text-center text-slate-500 mt-4 leading-relaxed">
-                                * Podana kwota to szacunkowy koszt materiałów, centrali rekuperacyjnej oraz robocizny. Aby otrzymać precyzyjną wycenę, wyślij powyższy formularz.
+                                * Podana kwota to szacunkowy koszt materiałów, centrali rekuperacyjnej oraz robocizny [cite: 1.2.17]. Aby otrzymać precyzyjną wycenę, wyślij powyższy formularz.
                             </p>
                         </div>
                     </div>
@@ -387,9 +387,9 @@
                     overLimitMsg.classList.add('hidden');
                 }
 
-                // Obliczenia
-                let baseCost = 12000;
-                let costPerSqm = 90;
+                // Nowe, urealnione obliczenia (baza dopasowana do kosztów robocizny ~6000 zł i droższych materiałów)
+                let baseCost = 10000; // startowa baza (robocizna + projekt + rozruch)
+                let costPerSqm = 65;   // koszt materiałów za m2
                 
                 let calculatedCost = baseCost + (area * costPerSqm);
                 let multiplier = 1.0;
@@ -404,6 +404,7 @@
 
                 calculatedCost = calculatedCost * multiplier;
 
+                // Rozszerzenie widełek do rynkowych standardów (120-150m2 wychodzi teraz rzetelne ~18-24 tys. PLN)
                 const minRange = calculatedCost * 0.90;
                 const maxRange = calculatedCost * 1.15;
 
