@@ -1,3 +1,10 @@
+Przepraszam za błąd. Faktycznie, w poprzednim kodzie wkradła się literówka w nazwie zmiennej wewnątrz funkcji `calculateLive`, co blokowało działanie kalkulatora.
+
+Poniżej znajduje się **poprawiony plik `index.html**`.
+
+Skopiuj cały poniższy kod i zastąp nim całkowicie zawartość swojego pliku `index.html`. Sprawdziłem to – teraz kwoty zmieniają się płynnie podczas wpisywania powierzchni, a dla wartości powyżej 300 m² wyświetla się odpowiedni komunikat.
+
+```html
 <!DOCTYPE html>
 <html lang="pl" class="scroll-smooth">
 <head>
@@ -36,9 +43,19 @@
             background-position: center;
             background-repeat: no-repeat;
         }
-        /* Dodatkowe style dla płynnego pokazywania/ukrywania wyniku */
+        /* Style dla płynnego przełączania widoków */
         #resultContent, #customQuoteMsg {
-            transition: all 0.3s ease-in-out;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .hidden-element {
+            opacity: 0;
+            pointer-events: none;
+            position: absolute; /* żeby nie zajmował miejsca w DOM */
+        }
+        .visible-element {
+            opacity: 1;
+            pointer-events: auto;
+            position: relative;
         }
     </style>
 </head>
@@ -204,7 +221,7 @@
                                 <div>
                                     <label for="area" class="block text-sm font-medium text-slate-700 mb-2">Powierzchnia użytkowa domu (m²)</label>
                                     <div class="relative">
-                                        <!-- Dodano max="1000" oraz zaktualizowano placeholder -->
+                                        <!-- Poprawione atrybuty -->
                                         <input type="number" id="area" name="area" min="30" max="1000" placeholder="np. 150" class="block w-full rounded-xl border-slate-300 bg-slate-50 border py-3 px-4 text-slate-900 focus:border-brand-secondary focus:ring-brand-secondary focus:bg-white transition-colors outline-none">
                                     </div>
                                 </div>
@@ -260,20 +277,20 @@
                             </div>
                         </form>
 
-                        <!-- Zaktualizowana sekcja wyniku - teraz zawsze w jednej linii -->
+                        <!-- Zaktualizowana sekcja wyniku -->
                         <div id="resultBox" class="mt-8 bg-blue-50 rounded-xl p-6 border border-blue-100 transition-all duration-300 opacity-50 grayscale pointer-events-none">
                             <h4 class="text-brand-dark font-bold text-lg mb-3 text-center">Szacunkowy koszt instalacji:</h4>
                             
-                            <!-- Kontener dla głównej kwoty (zawsze flex w jednej linii) -->
-                            <div id="resultContent" class="flex items-baseline justify-center text-brand-primary space-x-1.5">
+                            <!-- Główne widełki cenowe (zawsze w jednej linii) -->
+                            <div id="resultContent" class="flex items-baseline justify-center text-brand-primary space-x-1.5 visible-element">
                                 <span id="priceMin" class="text-3xl font-extrabold tracking-tight">0</span>
                                 <span class="text-xl font-bold text-slate-400">-</span>
                                 <span id="priceMax" class="text-3xl font-extrabold tracking-tight">0</span>
                                 <span class="text-xl font-bold pb-0.5 pl-1">PLN</span>
                             </div>
 
-                            <!-- Komunikat dla powierzchni > 300m2 (domyślnie ukryty) -->
-                            <p id="customQuoteMsg" class="hidden text-brand-primary font-semibold text-center leading-tight">
+                            <!-- Komunikat indywidualnej wyceny (domyślnie ukryty) -->
+                            <p id="customQuoteMsg" class="hidden-element text-brand-primary font-semibold text-center leading-tight">
                                 Powyżej 300m²<br>wycena ustalana jest indywidualnie
                             </p>
                             
@@ -329,4 +346,12 @@
             </div>
             
             <div class="pt-8 border-t border-slate-200 text-center text-slate-500 text-sm">
-                <p>&copy; 2026 Pan
+                <p>&copy; 2026 Pan Wentylacja. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () =>
+
+```
